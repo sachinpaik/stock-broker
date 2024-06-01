@@ -1,0 +1,18 @@
+syntax = "proto3";
+package riskmanagement;
+
+service RiskManagement {
+  rpc CheckOrderValidity (OrderRequest) returns (OrderResponse);
+  rpc CheckOrderValidity1 (OrderRequest) returns (OrderResponse);
+}
+
+message OrderRequest {
+  string order_id = 1;
+  string user_id = 2;
+  double order_amount = 3;
+}
+
+message OrderResponse {
+  bool is_valid = 1;
+  string message = 2;
+}
